@@ -144,8 +144,8 @@ Your folder must include:
 
 ## 📬 Contact
 
-**Organizer**: Venkatesh Siddi  
-**Company**: ZySec AI  
+Connect with us on [LinkedIn](https://www.linkedin.com/company/zysec-ai/)
+
 
 ---
 
