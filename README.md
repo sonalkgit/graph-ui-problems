@@ -79,6 +79,10 @@ The UI must accept input like this:
   }
 }
 ```
+
+👉 [Download sample_json.json](./sample_json.json)
+
+
 ## ✅ Must-Have Features
 
 - 🎯 Render nodes and edges using input JSON  
