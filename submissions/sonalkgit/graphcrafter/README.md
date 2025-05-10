@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Graph Crafter Submission
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full Name: Sonal Kharde
+GitHub Username: sonalkgit  
+Email: khardesonal18@gmail.com
 
-Currently, two official plugins are available:
+------------------------------------------------------------------------------------------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Libraries/Tools Used
+| Tool/Library          | Purpose                                   |
+|-----------------------|-------------------------------------------|
+| **React**             | UI rendering                              |
+| **TypeScript**        | Type safety and better developer tooling  |
+| **Cytoscape.js**      | Graph rendering and layout engine         |
+| **cytoscape-qtip**    | Tooltips on nodes                         |
+| **Vite**              | Lightning-fast development build tool     |
+| **SCSS**              | Styling                                   |
 
-## Expanding the ESLint configuration
+------------------------------------------------------------------------------------------
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features Implemented
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Graph Rendering**: Displays nodes and edges from Graph Json Data.
+- **Interactive Nodes**: Hover tooltips showing custom metadata.
+- **Node Styling**: Dynamic styles (color, shape, etc.) via props.
+- **Responsive Design**: Works on various screen sizes.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-----------------------------------------------------------------------------------------
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Design Decisions
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. **Graph Rendering with Cytoscape.js**  
+   - Used the `react-cytoscapejs` wrapper to render a dynamic graph.
+   - Registered and applied the `cytoscape-dagre` layout plugin (though currently using a `grid` layout for node arrangement).
+   - Graph nodes and edges are dynamically generated from a typed `GraphData` object.
+
+2. **Node and Edge Styling**  
+   - Node colors and shapes are customizable via optional `style` properties.
+   - Edge styles support solid and dashed lines, directional arrows, and custom colors.
+
+3. **Custom Tooltip on Node Hover**  
+   - Built a `Tooltip` component from scratch without using external libraries like `cytoscape-qtip`.
+   - Tooltips show non-core metadata from node properties, displayed near the cursor.
+
+4. **Type Safety and Structure**  
+   - Defined a custom `GraphData` TypeScript type to ensure consistent structure for nodes, edges, and metadata across the application.
+
+5. **Component Modularity**  
+   - The graph and tooltip logic are separated into their own components for clarity and maintainability.
+
+6. **Static Sample Data Usage**  
+   - Imported and rendered a sample graph defined in `sample_graph.json` to demonstrate graph structure and rendering capabilities.
+
+
+-------------------------------------------------------------------------------------------------
+
+### 🌐 Deployed Link (Optional)s
+
+--------------------------------------------------------------------------------------------------
+
